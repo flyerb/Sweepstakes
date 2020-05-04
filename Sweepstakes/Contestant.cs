@@ -13,12 +13,20 @@ using System.Text;
 
         public Contestant()
         {
-
+           
         }
 
-        public void GetRegistrationNumber()
+        public void CreateContestant()
         {
-            //check the current registraion number and add one.
+            firstName = UserInterface.GetStringInput("please enter first name");
+            lastName = UserInterface.GetStringInput("please enter last name");
+            email = UserInterface.GetStringInput("please enter email");
         }
+
+        //public int GetRegistrationNumber()
+        //{
+        //    registrationNumber = currentcontestant.count;
+
+        //}
     }
 }
