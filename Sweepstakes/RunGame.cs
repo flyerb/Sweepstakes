@@ -14,7 +14,7 @@ namespace Sweepstakes
         public RunGame()
         {
             contestant = new Contestant();
-            sweepstakes = new Sweepstakes("name"); //need to assign name in this class
+            sweepstakes = new Sweepstakes()
           
         }
 
