@@ -8,14 +8,13 @@ namespace Sweepstakes
     { 
         //variables
         Contestant contestant;
-        Sweepstakes sweepstakes;
+     
 
         //ctor
         public RunGame()
         {
             contestant = new Contestant();
-            sweepstakes = new Sweepstakes()
-          
+ 
         }
 
         //methods

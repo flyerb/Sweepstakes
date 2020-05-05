@@ -43,7 +43,7 @@ namespace Sweepstakes
                     return winner;
                 }
             }
-            return contestant;//wrong what is this?
+            return contestant;//wrong! what is this? come back and figure this out.
         }
 
         public void PrintContestantInfo(Contestant contestant)

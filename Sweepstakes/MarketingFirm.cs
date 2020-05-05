@@ -29,5 +29,3 @@ namespace Sweepstakes
     }
 }
 
-
-    //factory design pattern to allow a user to choose between a SweepstakesStackManager or a SweepstakesQueueManager to manage the sweepstakes objects.
