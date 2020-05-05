@@ -24,20 +24,21 @@ namespace Sweepstakes
 
         public ISweepstakesManager ChooseSweepstakesManager()
         {
-            Console.WriteLine("Welcome to the sweepstakes entry line. Would you like to sign up for North or Central Sweepstakes?");
+            Console.WriteLine("Welcome to the sweepstakes entry line. Would you like to sign up for Stack or Queue Sweepstakes?");
             string userInput = Console.ReadLine();
 
             switch (userInput)
             {
-                case "North":
+                case "Stack":
                     return stack;
 
-                case "Central":
+                case "Queue":
                     return queue;
 
                 default:
-                    throw new ApplicationException(string.Format("You did not enter a valid option.Please choose 'North' or 'Central'"));
-   
+                    Console.WriteLine("You did not enter a valid option.Please choose 'Stack' or 'Queue'");
+                    return ChooseSweepstakesManager();
+
             }
 
         }

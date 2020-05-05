@@ -7,14 +7,14 @@ namespace Sweepstakes
     class Sweepstakes
     {
         //variables
-        Contestant contestant;
+       // Contestant contestant;
         public string name;
         Dictionary<int, Contestant> currentContestants;
 
         //ctor
         public Sweepstakes(string name)
         {
-            contestant = new Contestant();
+            //contestant = new Contestant();
             this.name = name;
             currentContestants = new Dictionary<int, Contestant>();
         }
@@ -30,20 +30,20 @@ namespace Sweepstakes
         public Contestant PickWinner() // THIS MEANS A RETURN TYPE NOT A DATA TYPE 
         {
             Random rnd = new Random();
+            Contestant winner = new Contestant();
 
             int winningNumber = rnd.Next(currentContestants.Count);
 
            
             foreach (KeyValuePair<int, Contestant> sweepstakesWinner in currentContestants)
             {
-                if (winningNumber == contestant.registrationNumber)
+                if (winningNumber == sweepstakesWinner.Key)
                 {
                     Console.WriteLine($"Congratulations! The winning number is: {winningNumber}!");
-                    Contestant winner = sweepstakesWinner.Value;
-                    return winner;
+                    winner = sweepstakesWinner.Value;
                 }
             }
-            return contestant;//wrong! what is this? come back and figure this out.
+            return winner;
         }
 
         public void PrintContestantInfo(Contestant contestant)

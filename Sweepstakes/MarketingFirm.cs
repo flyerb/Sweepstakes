@@ -4,12 +4,12 @@ using System.Text;
 
 namespace Sweepstakes
 {
-    class MarketingFirm
+    class MarketingFirm 
     {
         //create a sweepstakes
 
         //variables
-        ISweepstakesManager sweepstakesManager;
+        public ISweepstakesManager sweepstakesManager;
 
         //ctor
         public MarketingFirm(ISweepstakesManager sweepstakesManager)
@@ -19,12 +19,22 @@ namespace Sweepstakes
 
         //methods
 
-        public void CreateSweepstakes()
+        public Sweepstakes CreateSweepstakes()
         {
-            Console.WriteLine("Create a new sweepstakes.What's the name of this sweepstake?");
-            string userInput = Console.ReadLine();
-            Sweepstakes newSweepstakes = new Sweepstakes(userInput);
-            sweepstakesManager.InsertSweepstakes(newSweepstakes);
+            int run = 3;
+            Sweepstakes newSweepstakes = new Sweepstakes("");
+
+            for (int i = 0; i < run; i++)
+            {
+                Console.WriteLine("Hello, Marketing team! What would you like to name the new Sweepstake?");
+                string userInput = Console.ReadLine();
+
+                newSweepstakes = new Sweepstakes(userInput);
+
+                sweepstakesManager.InsertSweepstakes(newSweepstakes);
+                
+            }
+            return newSweepstakes;
         }
     }
 }

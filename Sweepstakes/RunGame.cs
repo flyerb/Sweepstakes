@@ -7,38 +7,41 @@ namespace Sweepstakes
     class RunGame
     { 
         //variables
-        Contestant contestant;
-     
+        //Contestant contestant;
+        //Sweepstakes sweepstakes;
+        MarketingFirm marketingFirm;
+        ManagerFactory managerFactory;
+        ISweepstakesManager sweepstakesManager;
 
         //ctor
         public RunGame()
         {
-            contestant = new Contestant();
- 
+            //contestant = new Contestant();
+            //sweepstakes = new Sweepstakes("name");//whats the proper thing to do with this 'name'
+            managerFactory = new ManagerFactory();
+            sweepstakesManager = managerFactory.ChooseSweepstakesManager();
+            marketingFirm = new MarketingFirm(sweepstakesManager);
+
         }
 
         //methods
 
-       public void StartSweepstakes()
-        {
+       //public void StartSweepstakes()
+       // {
+       //     marketingFirm.CreateSweepstakes();
+       //     managerFactory.ChooseSweepstakesManager();
+
+       //     int rounds = 3;
+       //     for (int i = 0; i < rounds; i++)
+       //     {
+       //         Contestant currentContestant = new Contestant();
+       //         sweepstakes.RegisterContestant(contestant);
+       //     }
             
-            //for (int i = 0; i < 3; i++)
-            //{
-            //    contestant.CreateContestant();
-            //    sweepstakes.RegisterContestant(contestant);
-            //    sweepstakes.PrintContestantInfo(contestant);
-            //    //loop end
-            //    sweepstakes.PickWinner();
 
-            //}
-            
-
-            // set amount of tickets to be sold - can be chosen by manager
-
-            //Pick Winner
-
-            //display winner info
-        }
+       //     sweepstakes.PickWinner();
+       //     sweepstakes.PrintContestantInfo(contestant);
+       // }
         
     }
 }

@@ -8,7 +8,7 @@ namespace Sweepstakes
         {
 
             RunGame newGame = new RunGame();
-            newGame.StartSweepstakes();
+            
         }
     }
 }
