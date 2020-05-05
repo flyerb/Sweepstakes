@@ -41,7 +41,7 @@ namespace Sweepstakes
                     Console.WriteLine($"Congratulations! The winning number is: {winningNumber}!");
                     Contestant winner = sweepstakesWinner.Value;
                     return winner;
-                } 
+                }
             }
             return contestant;//wrong what is this?
         }
