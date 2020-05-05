@@ -11,22 +11,12 @@ using System.Text;
         public string email;
         public int registrationNumber;
 
-        public Contestant()
-        {
-           
-        }
 
         public void CreateContestant()
         {
-            firstName = UserInterface.GetStringInput("please enter first name");
-            lastName = UserInterface.GetStringInput("please enter last name");
-            email = UserInterface.GetStringInput("please enter email");
+            firstName = UserInterface.GetStringInput("please enter your first name");
+            lastName = UserInterface.GetStringInput("please enter your last name");
+            email = UserInterface.GetStringInput("please enter your email");
         }
-
-        //public int GetRegistrationNumber()
-        //{
-        //    registrationNumber = currentcontestant.count;
-
-        //}
     }
 }

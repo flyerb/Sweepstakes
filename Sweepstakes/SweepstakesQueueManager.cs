@@ -18,11 +18,13 @@ namespace Sweepstakes
          queue = new Queue<Sweepstakes>();
         }
 
+        //methods
+
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
             queue.Enqueue(sweepstakes);
         }
-        public Sweepstakes GetSweepstakes() //need to capture the variable to return
+        public Sweepstakes GetSweepstakes() //REMEMBER to assign the output to a variable. You have to capture it to return it.
         {
             Sweepstakes sweep = queue.Dequeue();
             return sweep;

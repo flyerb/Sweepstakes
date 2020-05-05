@@ -22,24 +22,34 @@ namespace Sweepstakes
         //methods
 	    public void RegisterContestant(Contestant contestant)
         {
-            contestant.registrationNumber = currentContestants.Count;
+            contestant.registrationNumber = currentContestants.Count+ 1;
             currentContestants.Add(contestant.registrationNumber, contestant);
+            Console.WriteLine($"You are registered! Your number is {contestant.registrationNumber}");
         }
 
         public Contestant PickWinner() // THIS MEANS A RETURN TYPE NOT A DATA TYPE 
         {
             Random rnd = new Random();
-            Contestant randomKey = currentContestants[rnd.Next(currentContestants.Count)];
-            Console.WriteLine($"Congratulations, the winner is number {randomKey} !");
-            return randomKey;
+
+            int winningNumber = rnd.Next(currentContestants.Count);
+
+           
+            foreach (KeyValuePair<int, Contestant> sweepstakesWinner in currentContestants)
+            {
+                if (winningNumber == contestant.registrationNumber)
+                {
+                    Console.WriteLine($"Congratulations! The winning number is: {winningNumber}!");
+                    Contestant winner = sweepstakesWinner.Value;
+                    return winner;
+                } 
+            }
+            return contestant;//wrong what is this?
         }
 
         public void PrintContestantInfo(Contestant contestant)
         {
-            foreach (KeyValuePair<int, Contestant> Dictonarycontestant in currentContestants)
-            {
-                Console.WriteLine($"Contestant Registration number: {currentContestants.Keys} Contestant Name: {currentContestants.Values}");
-            }
+          Console.WriteLine($"Contestant Registration number: {contestant.registrationNumber} Contestant Name: {contestant.firstName} {contestant.lastName}");
+
         }
 
     }

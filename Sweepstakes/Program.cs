@@ -6,8 +6,9 @@ namespace Sweepstakes
     {
         static void Main(string[] args)
         {
-            
-          
+
+            RunGame newGame = new RunGame();
+            newGame.StartSweepstakes();
         }
     }
 }
